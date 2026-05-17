@@ -32,15 +32,14 @@ namespace StadiumAnalytics.API
             builder.Services.AddHostedService<SensorEventSimulatorService>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             var app = builder.Build();
-
-            if (app.Environment.IsDevelopment())
+            using (var scope = app.Services.CreateScope())
             {
-                app.UseSwagger();
-
-                app.UseSwaggerUI();
+                var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                db.Database.Migrate();
             }
+            app.UseSwagger();
 
-            app.UseHttpsRedirection();
+            app.UseSwaggerUI();
 
             app.UseAuthorization();
 
