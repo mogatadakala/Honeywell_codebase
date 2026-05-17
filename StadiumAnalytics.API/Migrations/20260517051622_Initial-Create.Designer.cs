@@ -12,7 +12,7 @@ using StadiumAnalytics.API.DbContexts;
 namespace StadiumAnalytics.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260517033856_InitialCreate")]
+    [Migration("20260517051622_Initial-Create")]
     partial class InitialCreate
     {
         /// <inheritdoc />
