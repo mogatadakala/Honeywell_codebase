@@ -10,6 +10,7 @@ A production-style Event Driven Architecture solution built using:
 - Background Services
 - Swagger/OpenAPI
 - Default Microsoft Logging
+- Docker & Docker Compose (containerized deployment)
 
 This application simulates stadium gate sensor events and provides analytics summaries for dashboard reporting.
 
